@@ -146,7 +146,7 @@
             lblMensagem.AutoSize = true;
             lblMensagem.Font = new Font("Segoe UI", 20F);
             lblMensagem.ForeColor = SystemColors.ButtonFace;
-            lblMensagem.Location = new Point(260, 37);
+            lblMensagem.Location = new Point(202, 37);
             lblMensagem.Name = "lblMensagem";
             lblMensagem.Size = new Size(263, 54);
             lblMensagem.TabIndex = 4;
