@@ -59,5 +59,15 @@ namespace SenacFoods.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _94f5e448c83428624a49161d201b140d {
+            get {
+                object obj = ResourceManager.GetObject("94f5e448c83428624a49161d201b140d", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

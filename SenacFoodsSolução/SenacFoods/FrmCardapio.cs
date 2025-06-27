@@ -25,7 +25,7 @@ namespace SenacFoods
         private void BuscarCardapio()
         {
             //conectar no banco de dados
-            using(var bd= new ComandoDBContext())
+            using (var bd = new ComandoDBContext())
             {
                 //consultar a tabela cardapioitem SELECT * FROM CARDAPIO
                 var cardapios = bd.CardapioItems.ToList();
@@ -34,6 +34,16 @@ namespace SenacFoods
             }
 
 
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
 
         }
     }
