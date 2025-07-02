@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCardapio));
             groupBox1 = new GroupBox();
+            btnadicionar = new Button();
             button2 = new Button();
             button1 = new Button();
             dataGridView1 = new DataGridView();
             label1 = new Label();
-            textBox1 = new TextBox();
+            txtPesquisa = new TextBox();
             btnFechar = new Button();
-            button3 = new Button();
             panel1 = new Panel();
             button4 = new Button();
             groupBox1.SuspendLayout();
@@ -46,18 +46,32 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(button3);
+            groupBox1.Controls.Add(btnadicionar);
             groupBox1.Controls.Add(button2);
             groupBox1.Controls.Add(button1);
             groupBox1.Controls.Add(dataGridView1);
-            groupBox1.Location = new Point(-2, 91);
+            groupBox1.Location = new Point(-2, 116);
             groupBox1.Margin = new Padding(4, 5, 4, 5);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(4, 5, 4, 5);
-            groupBox1.Size = new Size(1206, 589);
+            groupBox1.Size = new Size(1206, 564);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Cardápio";
+            groupBox1.Enter += groupBox1_Enter;
+            // 
+            // btnadicionar
+            // 
+            btnadicionar.BackColor = Color.FromArgb(0, 192, 192);
+            btnadicionar.ForeColor = Color.Black;
+            btnadicionar.Location = new Point(52, 59);
+            btnadicionar.Margin = new Padding(4, 5, 4, 5);
+            btnadicionar.Name = "btnadicionar";
+            btnadicionar.Size = new Size(168, 63);
+            btnadicionar.TabIndex = 3;
+            btnadicionar.Text = "+ Item";
+            btnadicionar.UseVisualStyleBackColor = false;
+            btnadicionar.Click += btnadicionar_Click;
             // 
             // button2
             // 
@@ -104,13 +118,14 @@
             label1.TabIndex = 3;
             label1.Text = "Pesquisar";
             // 
-            // textBox1
+            // txtPesquisa
             // 
-            textBox1.Location = new Point(178, 25);
-            textBox1.Margin = new Padding(4, 5, 4, 5);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(828, 45);
-            textBox1.TabIndex = 4;
+            txtPesquisa.Location = new Point(178, 25);
+            txtPesquisa.Margin = new Padding(4, 5, 4, 5);
+            txtPesquisa.Name = "txtPesquisa";
+            txtPesquisa.Size = new Size(828, 45);
+            txtPesquisa.TabIndex = 4;
+            txtPesquisa.TextChanged += txtPesquisa_TextChanged;
             // 
             // btnFechar
             // 
@@ -126,25 +141,14 @@
             btnFechar.TabIndex = 5;
             btnFechar.Text = "X";
             btnFechar.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            button3.BackColor = Color.FromArgb(0, 192, 192);
-            button3.ForeColor = Color.Black;
-            button3.Location = new Point(52, 59);
-            button3.Margin = new Padding(4, 5, 4, 5);
-            button3.Name = "button3";
-            button3.Size = new Size(168, 63);
-            button3.TabIndex = 3;
-            button3.Text = "+ Item";
-            button3.UseVisualStyleBackColor = false;
+            btnFechar.Click += btnFechar_Click;
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(255, 128, 0);
             panel1.Controls.Add(button4);
             panel1.Controls.Add(btnFechar);
-            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(txtPesquisa);
             panel1.Controls.Add(label1);
             panel1.Location = new Point(-2, 0);
             panel1.Name = "panel1";
@@ -196,9 +200,9 @@
         private Button button2;
         private Button button1;
         private DataGridView dataGridView1;
-        private TextBox textBox1;
+        private TextBox txtPesquisa;
         private Button btnFechar;
-        private Button button3;
+        private Button btnadicionar;
         private Panel panel1;
         private Button button4;
     }

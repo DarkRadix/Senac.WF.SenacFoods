@@ -205,6 +205,7 @@ namespace SenacFoods
             button1.TabIndex = 18;
             button1.Text = "X Cancelar";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // panel2
             // 
@@ -248,6 +249,7 @@ namespace SenacFoods
             button5.TabIndex = 5;
             button5.Text = "X";
             button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click_1;
             // 
             // label6
             // 
