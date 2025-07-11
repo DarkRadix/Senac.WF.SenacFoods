@@ -1,6 +1,6 @@
 ﻿namespace SenacFoods
 {
-    partial class FrmCardapio
+    partial class FrmMesa
     {
         /// <summary>
         /// Required designer variable.
@@ -28,37 +28,47 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCardapio));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMesa));
+            dataGridView1 = new DataGridView();
             groupBox1 = new GroupBox();
             btnadicionar = new Button();
-            btneditar = new Button();
-            btnexcluir = new Button();
-            dataGridView1 = new DataGridView();
-            label1 = new Label();
-            txtPesquisa = new TextBox();
+            button2 = new Button();
+            button1 = new Button();
             btnFechar = new Button();
+            txtPesquisa = new TextBox();
+            label1 = new Label();
             panel1 = new Panel();
             button4 = new Button();
-            groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            groupBox1.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.BackgroundColor = Color.FromArgb(255, 255, 128);
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(52, 133);
+            dataGridView1.Margin = new Padding(4, 5, 4, 5);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 62;
+            dataGridView1.Size = new Size(1086, 374);
+            dataGridView1.TabIndex = 0;
             // 
             // groupBox1
             // 
             groupBox1.Controls.Add(btnadicionar);
-            groupBox1.Controls.Add(btneditar);
-            groupBox1.Controls.Add(btnexcluir);
+            groupBox1.Controls.Add(button2);
+            groupBox1.Controls.Add(button1);
             groupBox1.Controls.Add(dataGridView1);
-            groupBox1.Location = new Point(-2, 116);
+            groupBox1.Location = new Point(0, 111);
             groupBox1.Margin = new Padding(4, 5, 4, 5);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(4, 5, 4, 5);
             groupBox1.Size = new Size(1206, 564);
-            groupBox1.TabIndex = 0;
+            groupBox1.TabIndex = 9;
             groupBox1.TabStop = false;
             groupBox1.Text = "Cardápio";
-            groupBox1.Enter += groupBox1_Enter;
             // 
             // btnadicionar
             // 
@@ -71,64 +81,29 @@
             btnadicionar.TabIndex = 3;
             btnadicionar.Text = "+ Item";
             btnadicionar.UseVisualStyleBackColor = false;
-            btnadicionar.Click += btnadicionar_Click;
             // 
-            // btneditar
+            // button2
             // 
-            btneditar.BackColor = Color.LimeGreen;
-            btneditar.Location = new Point(975, 516);
-            btneditar.Margin = new Padding(4, 5, 4, 5);
-            btneditar.Name = "btneditar";
-            btneditar.Size = new Size(168, 52);
-            btneditar.TabIndex = 2;
-            btneditar.Text = "# Editar";
-            btneditar.UseVisualStyleBackColor = false;
-            btneditar.Click += btneditar_Click;
+            button2.BackColor = Color.LimeGreen;
+            button2.Location = new Point(975, 516);
+            button2.Margin = new Padding(4, 5, 4, 5);
+            button2.Name = "button2";
+            button2.Size = new Size(168, 52);
+            button2.TabIndex = 2;
+            button2.Text = "# Editar";
+            button2.UseVisualStyleBackColor = false;
             // 
-            // btnexcluir
+            // button1
             // 
-            btnexcluir.BackColor = Color.IndianRed;
-            btnexcluir.ForeColor = Color.Black;
-            btnexcluir.Location = new Point(805, 516);
-            btnexcluir.Margin = new Padding(4, 5, 4, 5);
-            btnexcluir.Name = "btnexcluir";
-            btnexcluir.Size = new Size(168, 52);
-            btnexcluir.TabIndex = 1;
-            btnexcluir.Text = "X Excluir";
-            btnexcluir.UseVisualStyleBackColor = false;
-            btnexcluir.Click += btnexcluir_Click;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.BackgroundColor = Color.FromArgb(255, 255, 128);
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(52, 133);
-            dataGridView1.Margin = new Padding(4, 5, 4, 5);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(1086, 374);
-            dataGridView1.TabIndex = 0;
-            dataGridView1.CellClick += dataGridView1_CellClick;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(36, 28);
-            label1.Margin = new Padding(4, 0, 4, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(134, 38);
-            label1.TabIndex = 3;
-            label1.Text = "Pesquisar";
-            // 
-            // txtPesquisa
-            // 
-            txtPesquisa.Location = new Point(178, 25);
-            txtPesquisa.Margin = new Padding(4, 5, 4, 5);
-            txtPesquisa.Name = "txtPesquisa";
-            txtPesquisa.Size = new Size(828, 45);
-            txtPesquisa.TabIndex = 4;
-            txtPesquisa.TextChanged += txtPesquisa_TextChanged;
+            button1.BackColor = Color.IndianRed;
+            button1.ForeColor = Color.Black;
+            button1.Location = new Point(805, 516);
+            button1.Margin = new Padding(4, 5, 4, 5);
+            button1.Name = "button1";
+            button1.Size = new Size(168, 52);
+            button1.TabIndex = 1;
+            button1.Text = "X Excluir";
+            button1.UseVisualStyleBackColor = false;
             // 
             // btnFechar
             // 
@@ -144,7 +119,24 @@
             btnFechar.TabIndex = 5;
             btnFechar.Text = "X";
             btnFechar.UseVisualStyleBackColor = true;
-            btnFechar.Click += btnFechar_Click;
+            // 
+            // txtPesquisa
+            // 
+            txtPesquisa.Location = new Point(178, 25);
+            txtPesquisa.Margin = new Padding(4, 5, 4, 5);
+            txtPesquisa.Name = "txtPesquisa";
+            txtPesquisa.Size = new Size(828, 31);
+            txtPesquisa.TabIndex = 4;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(36, 28);
+            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(86, 25);
+            label1.TabIndex = 3;
+            label1.Text = "Pesquisar";
             // 
             // panel1
             // 
@@ -153,10 +145,10 @@
             panel1.Controls.Add(btnFechar);
             panel1.Controls.Add(txtPesquisa);
             panel1.Controls.Add(label1);
-            panel1.Location = new Point(-2, 0);
+            panel1.Location = new Point(0, -5);
             panel1.Name = "panel1";
             panel1.Size = new Size(1206, 89);
-            panel1.TabIndex = 6;
+            panel1.TabIndex = 10;
             // 
             // button4
             // 
@@ -174,23 +166,20 @@
             button4.TabIndex = 6;
             button4.Text = " ";
             button4.UseVisualStyleBackColor = false;
-            button4.Click += button4_Click;
             // 
-            // FrmCardapio
+            // FrmMesa
             // 
-            AutoScaleDimensions = new SizeF(15F, 38F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1200, 684);
+            ClientSize = new Size(1201, 687);
             Controls.Add(groupBox1);
             Controls.Add(panel1);
-            Font = new Font("Segoe UI", 14F);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(4, 5, 4, 5);
-            Name = "FrmCardapio";
-            Text = "FrmCardapio";
-            Load += FrmCardapio_Load;
-            groupBox1.ResumeLayout(false);
+            Name = "FrmMesa";
+            Text = "FrmMesa";
+            WindowState = FormWindowState.Minimized;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            groupBox1.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -198,14 +187,14 @@
 
         #endregion
 
-        private GroupBox groupBox1;
-        private Label label1;
-        private Button btneditar;
-        private Button btnexcluir;
         private DataGridView dataGridView1;
-        private TextBox txtPesquisa;
-        private Button btnFechar;
+        private GroupBox groupBox1;
         private Button btnadicionar;
+        private Button button2;
+        private Button button1;
+        private Button btnFechar;
+        private TextBox txtPesquisa;
+        private Label label1;
         private Panel panel1;
         private Button button4;
     }

@@ -12,6 +12,7 @@ namespace SenacFoods
 {
     public partial class FrmCardapio : Form
     {
+        CardapioItem? cardapioSelecionado;
         public FrmCardapio()
         {
             InitializeComponent();
@@ -29,9 +30,9 @@ namespace SenacFoods
             {
                 //consultar a tabela cardapioitem SELECT * FROM CARDAPIO
                 var cardapios = bd.CardapioItems.AsQueryable();
-                if(!string.IsNullOrEmpty(txtPesquisa.Text))
+                if (!string.IsNullOrEmpty(txtPesquisa.Text))
                 {
-                    cardapios = cardapios.Where(c=> c.Titulo.Contains(txtPesquisa.Text) || 
+                    cardapios = cardapios.Where(c => c.Titulo.Contains(txtPesquisa.Text) ||
                                                     c.Descricao.Contains(txtPesquisa.Text));
                 }
                 //popular o grid com a tabela consultada
@@ -70,6 +71,54 @@ namespace SenacFoods
         {
             //chamar o metodo buscar cardápio
             BuscarCardapio();
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (e.RowIndex >= 0)
+            {
+                cardapioSelecionado = dataGridView1.Rows[e.RowIndex].DataBoundItem as CardapioItem;
+                btneditar.Enabled = true;
+               
+            }
+        }
+        // click do editar
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btneditar_Click(object sender, EventArgs e)
+        {
+            if (cardapioSelecionado != null)
+            {
+                var frmEditar = new FrmCardapioCad(cardapioSelecionado);
+                frmEditar.ShowDialog();
+                BuscarCardapio();
+                cardapioSelecionado = null;
+            }
+        }
+
+        private void btnexcluir_Click(object sender, EventArgs e)
+        {
+            if (cardapioSelecionado != null)
+            {
+                using (var bancoDeDados = new ComandoDBContext())
+                {
+                    bancoDeDados.CardapioItems.Remove(cardapioSelecionado);
+                    bancoDeDados.SaveChanges();
+                }
+                MessageBox.Show("Cardápio exluído com sucesso!", "Sucesso",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                BuscarCardapio();
+                cardapioSelecionado = null;
+            }
+            else
+            {
+                MessageBox.Show("Selecione um cardápio para excluir ", "Aviso",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }
